@@ -6,17 +6,32 @@ sources:
     schema:  "{{ var('input_schema') }}"
     tables:
       - name: carrier_base_claim
+        identifier: carrier_claims
       - name: carrier_claim_line
+        identifier: carrier_line
       - name: dme_base_claim
+        identifier: dme_claims
       - name: dme_claim_line
+        identifier: dme_line
       - name: hha_base_claim
+        identifier: hha_claims
       - name: hha_revenue_center
+        identifier: hha_revenue
       - name: hospice_base_claim
+        identifier: hospice_claims
       - name: hospice_revenue_center
+        identifier: hospice_revenue
       - name: inpatient_base_claim
+        identifier: inpatient_claims
       - name: inpatient_revenue_center
+        identifier: inpatient_revenue
       - name: master_beneficiary_summary
+        identifier: mbsf
       - name: outpatient_base_claim
+        identifier: outpatient_claims
       - name: outpatient_revenue_center
-      - name: snf_base_claim
+        identifier: outpatient_revenue
       - name: snf_revenue_center
+        identifier: snf_revenue
+      - name: snf_base_claim
+        identifier: snf_claims

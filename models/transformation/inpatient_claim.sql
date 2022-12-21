@@ -50,7 +50,7 @@ select
       as bill_type_code
     , {{ cast_string_or_varchar('b.clm_drg_cd') }} as ms_drg_code
     , {{ cast_string_or_varchar('l.rev_cntr') }} as revenue_center_code
-    , cast(regexp_substr(l.rev_cntr_unit_cnt, '.') as integer) as service_unit_quantity
+    , cast(l.rev_cntr_unit_cnt as integer) as service_unit_quantity
     , {{ cast_string_or_varchar('l.hcpcs_cd') }} as hcpcs_code
     , {{ cast_string_or_varchar('l.hcpcs_1st_mdfr_cd') }} as hcpcs_modifier_1
     , {{ cast_string_or_varchar('l.hcpcs_2nd_mdfr_cd') }} as hcpcs_modifier_2
@@ -176,4 +176,4 @@ inner join {{ var('inpatient_revenue_center') }} as l
 /* Payment is provided at the header level only.  Populating on line number 1 to avoid duplication. */
 left join header_payment p
     on b.claim_id = p.claim_id
-    and l.clm_line_num = '1'
+    and l.clm_line_num = 1

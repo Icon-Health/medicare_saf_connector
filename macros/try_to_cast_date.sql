@@ -14,7 +14,7 @@
 
 {%- macro bigquery__try_to_cast_date(column_name, date_format) -%}
 
-    safe_cast( {{ column_name }} as date )
+    cast(SUBSTRING({{column_name}}, 1,  4) || '-' || SUBSTRING({{column_name}}, 5,  2) || '-' || SUBSTRING({{column_name}}, 7,  2) as date)
 
 {%- endmacro -%}
 

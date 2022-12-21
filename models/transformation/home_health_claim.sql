@@ -32,7 +32,7 @@ select
       as bill_type_code
     , {{ cast_string_or_varchar('NULL') }} as ms_drg_code
     , {{ cast_string_or_varchar('l.rev_cntr') }} as revenue_center_code
-    , cast(regexp_substr(l.rev_cntr_unit_cnt, '.') as integer) as service_unit_quantity
+    , cast(l.rev_cntr_unit_cnt as integer) as service_unit_quantity   
     , {{ cast_string_or_varchar('l.hcpcs_cd') }} as hcpcs_code
     , {{ cast_string_or_varchar('l.hcpcs_1st_mdfr_cd') }} as hcpcs_modifier_1
     , {{ cast_string_or_varchar('l.hcpcs_2nd_mdfr_cd') }} as hcpcs_modifier_2

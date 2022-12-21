@@ -6,16 +6,16 @@ config-version: 2
 profile: 'default'                      # configuration required
 
 vars:
-  input_database: medicare_lds_saf      # configuration required
+  input_database: ferrous-weaver-306014      # configuration required
                                         # name of the database where sources feeding this project are stored
 
-  input_schema:  saf                    # configuration required
+  input_schema:  LDS                    # configuration required
                                         # name of the schema where sources feeding this project is stored
 
-  output_database: tuva                 # configuration required
+  output_database: ferrous-weaver-306014                 # configuration required
                                         # name of the database where output of this project should be written
 
-  output_schema: claims_input           # configuration required
+  output_schema: LDS_connector           # configuration required
                                         # name of the schema where output of this project should be written
 
   carrier_base_claim: "{{ source('saf','carrier_base_claim') }}"
